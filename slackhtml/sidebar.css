@@ -6,8 +6,21 @@
 
 #sidebar h2 {
 	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 5px
 }
 
 #sidebar h3 {
 	font-size: 15px;
+	padding: 5px
+}
+
+#sidebar li {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+#sidebar li:hover {
+	background: black;
+	color: red;
 }
