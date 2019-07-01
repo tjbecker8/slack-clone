@@ -24,3 +24,8 @@
 	background: black;
 	color: red;
 }
+
+#sidebar li.active {
+	background: black;
+	color: red;
+}
