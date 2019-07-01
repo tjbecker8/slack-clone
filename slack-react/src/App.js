@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Sidebar from './sidebar'
-
+import Content from './Content'
 class App extends Component {
 	//data
 	//functions
 	//render
 	render() {
 		return (
-			<div>
+			<div id="wrap">
 				<Sidebar />
-				<h1>Hello</h1>
-				<p>Yo</p>
+				<Content />
 			</div>
 		)
 	}
