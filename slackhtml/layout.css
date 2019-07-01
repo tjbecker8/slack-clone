@@ -1,5 +1,5 @@
 html, body {
-	
+
 	margin: 0;
 	padding: 0;
 }
@@ -7,4 +7,6 @@ html, body {
 #wrap {
 	background: blue;
 	height: 100vh;
+	display: grid;
+	grid-template-columns: 200px 100%;
 }
