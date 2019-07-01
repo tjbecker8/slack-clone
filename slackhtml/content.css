@@ -3,15 +3,18 @@
 	grid-template-rows: auto 80px;
 }
 
+#messages {
+	height: calc(100vh - 80px);
+	overflow-y: auto;
+}
+
 #content #messages {
 	background: green;
 	padding: 20px;
-	display: grid;
-	grid-template-rows: auto;
 }
 
 #content #new-messages {
-	
+padding: 20px;
 }
 
 #content .message {
