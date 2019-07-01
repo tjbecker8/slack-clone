@@ -3,11 +3,20 @@
 	grid-template-rows: auto 80px;
 }
 
-#content .messages {
+#content #messages {
 	background: green;
+	padding: 20px;
 
 }
 
 #content #new-messages {
 	background: coral;
+}
+
+#content .message {
+	background: white;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	box-shadow: 0 2px 20px rgba(255, 0, 0, .1);
+	border-radius: 5px;
 }
