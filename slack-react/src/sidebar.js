@@ -32,9 +32,7 @@ class Sidebar extends Component {
 		console.log(this.state.channels);
 	}
 
-	iNeedAlcohol = (e) => {
-		console.log('i am going to become an addict becuase of coding');
-	}
+	
 	//render
 	render() {
 		return (
