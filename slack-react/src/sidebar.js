@@ -20,8 +20,16 @@ class Sidebar extends Component {
 		]
 	}
 	//functions
-	selectChannel = () => {
-		console.log('YO');
+	selectChannel = (id) => {
+		console.log(id);
+		let channels = this.state.channels
+		channels.map((c)=> c.active = false) //add the active property to each element
+		// channels.map((c) => delete c.active) //delete a property
+		// channels.forEach((c) => delete c.active) //this works too to remove active property
+		let channel = channels.find((c) => c.id === id)
+		channel.active = true
+		this.setState({channels})
+		console.log(this.state.channels);
 	}
 	//render
 	render() {
