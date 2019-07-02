@@ -4,18 +4,22 @@ class NewMessage extends Component {
 	//data
 
 	//functions
+	createMessage = (e) => {
+		e.preventDefault()
+		console.log('HELLO')
+	}
 	//render
 	render() {
 		return (
 			<div id="new-messages">
-
-				<div className="input-group mb-3">
-					<input type="text" className="form-control" />
-					<div className="input-group-append">
-						<button className="btn btn-success" type="submit" >Send</button>
+				<form onSubmit= {(e) => this.createMessage(e)}>
+					<div className="input-group mb-3">
+						<input type="text" className="form-control" placeholder="new message" />
+						<div className="input-group-append">
+							<button className="btn btn-success" type="submit" >Send</button>
+						</div>
 					</div>
-				</div>
-
+				</form>
 			</div>
 
 

@@ -38,6 +38,7 @@ class Content extends Component {
 		]
 	}
 	//functions
+	
 	//render
 	render() {
 		return (
