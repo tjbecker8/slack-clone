@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './content.css';
 import Message from './Message'
+import Newmessage from './NewMessage'
 class Content extends Component {
 	//data
 	state = {
@@ -49,16 +50,7 @@ class Content extends Component {
 					}
 
 				</div>
-				<div id="new-messages">
-
-					<div className="input-group mb-3">
-						<input type="text" className="form-control" />
-						<div className="input-group-append">
-							<button className="btn btn-success" type="submit" >Send</button>
-						</div>
-					</div>
-
-				</div>
+				<Newmessage />
 			</div>
 
 
