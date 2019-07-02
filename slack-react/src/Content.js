@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './content.css';
 import Message from './Message'
-import Newmessage from './NewMessage'
+import NewMessage from './NewMessage'
 class Content extends Component {
 	//data
 	state = {
@@ -50,7 +50,7 @@ class Content extends Component {
 					}
 
 				</div>
-				<Newmessage />
+				<NewMessage />
 			</div>
 
 

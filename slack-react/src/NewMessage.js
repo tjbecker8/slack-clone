@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './content.css';
-class Newmessage extends Component {
+class NewMessage extends Component {
 	//data
 
 	//functions
@@ -25,4 +25,4 @@ class Newmessage extends Component {
 
 
 
-export default Newmessage;
+export default NewMessage;
