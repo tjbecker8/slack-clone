@@ -3,13 +3,39 @@ import './content.css';
 import Message from './Message'
 class Content extends Component {
 	//data
+	state = {
+		messages: [
+			{
+				id: 1,
+				author: 'john smith',
+				date: '2/7/2019 - 7am',
+				body: 'hello world'
+			},
+			{
+				id: 1,
+				author: 'john smith',
+				date: '2/7/2019 - 8am',
+				body: 'hello world'
+			}, {
+				id: 1,
+				author: 'john smith',
+				date: "2/7/2019 - 9am",
+				body: 'hello world'
+			}
+		]
+	}
 	//functions
 	//render
 	render() {
 		return (
 			<div id="content">
 				<div id="messages">
-					<Message />
+					{
+						this.state.messages.map((m)=> {
+							return <Message />
+						})
+					}
+
 				</div>
 				<div id="new-messages">
 
