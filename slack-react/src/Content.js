@@ -27,6 +27,12 @@ class Content extends Component {
 				author: 'Tom',
 				date: '2/7/2019 - 10:28',
 				body: 'this sucks that I can only say f*** a limited number of times a day'
+			},
+			{
+				id: 5,
+				author: 'Tom',
+				date: '2/7/2019 - 14:04',
+				body: 'I have only said f*** 5 times today'
 			}
 		]
 	}
