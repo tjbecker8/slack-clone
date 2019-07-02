@@ -20,6 +20,9 @@ class Sidebar extends Component {
 		]
 	}
 	//functions
+	selectChannel = () => {
+		console.log('YO');
+	}
 	//render
 	render() {
 		return (
@@ -30,7 +33,7 @@ class Sidebar extends Component {
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-							return <Channel />
+							return <Channel channel={c} key={c.id} selectChannel={this.selectChannel} />
 						})
 					}
 				</ul>

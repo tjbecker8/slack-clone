@@ -7,20 +7,26 @@ class Content extends Component {
 		messages: [
 			{
 				id: 1,
-				author: 'john smith',
-				date: '2/7/2019 - 7am',
-				body: 'hello world'
+				author: 'Tom',
+				date: '2/7/2019 - 04:00',
+				body: 'I got up at 4am'
 			},
 			{
-				id: 1,
-				author: 'john smith',
-				date: '2/7/2019 - 8am',
-				body: 'hello world'
+				id: 2,
+				author: 'Tom',
+				date: '2/7/2019 - 07:30',
+				body: 'so I went with edgar and got a great breakie'
 			}, {
-				id: 1,
-				author: 'john smith',
-				date: "2/7/2019 - 9am",
-				body: 'hello world'
+				id: 3,
+				author: 'Tom',
+				date: '2/7/2019 - 09:41',
+				body: 'Now I want a nap'
+			},
+			{
+				id: 4,
+				author: 'Tom',
+				date: '2/7/2019 - 10:28',
+				body: 'this sucks that I can only say f*** a limited number of times a day'
 			}
 		]
 	}
@@ -32,7 +38,7 @@ class Content extends Component {
 				<div id="messages">
 					{
 						this.state.messages.map((m)=> {
-							return <Message />
+							return <Message message={m} key={m.id} />
 						})
 					}
 
