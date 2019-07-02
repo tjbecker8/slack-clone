@@ -31,6 +31,10 @@ class Sidebar extends Component {
 		this.setState({channels})
 		console.log(this.state.channels);
 	}
+
+	iNeedAlcohol = (e) => {
+		console.log('i am going to become an addict becuase of coding');
+	}
 	//render
 	render() {
 		return (
@@ -41,7 +45,7 @@ class Sidebar extends Component {
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-							return <Channel channel={c} key={c.id} selectChannel={this.selectChannel} />
+							return <Channel channel={c} key={c.id} selectChannel={this.selectChannel} iNeedAlcohol={this.iNeedAlcohol} />
 						})
 					}
 				</ul>

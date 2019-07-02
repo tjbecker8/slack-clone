@@ -38,7 +38,18 @@ class Content extends Component {
 		]
 	}
 	//functions
-	
+	createMessage = (e, message) => {
+		e.preventDefault()
+		console.log(message)
+		let messages = this.state.messages
+		messages.push({
+			id: 7,
+			author: 'Tom',
+			body: this.state.messages,
+			date: 'wfwer'
+		})
+		
+	}
 	//render
 	render() {
 		return (
@@ -51,7 +62,7 @@ class Content extends Component {
 					}
 
 				</div>
-				<NewMessage />
+				<NewMessage  createMessage={this.createMessage} />
 			</div>
 
 
