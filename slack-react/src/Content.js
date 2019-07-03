@@ -45,10 +45,11 @@ class Content extends Component {
 		messages.push({
 			id: 7,
 			author: 'Tom',
-			body: this.state.messages,
-			date: 'wfwer'
+			body: message,
+			date: 'date'
 		})
-		
+		this.setState({messages})
+
 	}
 	//render
 	render() {
