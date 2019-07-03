@@ -3,7 +3,7 @@ import './content.css';
 class NewMessage extends Component {
 	//data
 	state = {
-		text: 'new message'
+		text: ''
 	}
 	//functions
 	// createMessage = (e) => {

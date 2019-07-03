@@ -38,16 +38,17 @@ class Content extends Component {
 		]
 	}
 	//functions
-	createMessage = (e, message) => {
+	createMessage = (e, text) => {
 		e.preventDefault()
-		console.log(message)
-		let messages = this.state.messages
-		messages.push({
+		let message = {
 			id: 7,
 			author: 'Tom',
-			body: message,
+			body: text,
 			date: 'date'
-		})
+		}
+		console.log(message)
+		let messages = this.state.messages
+		messages.push(message)
 		this.setState({messages})
 
 	}
