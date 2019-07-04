@@ -12,7 +12,7 @@ class Channel extends Component {
 	//render
 	render() {
 		return (
-			<li onClick={()=> this.props.selectChannel(this.state.channel.id)} className={ this.state.channel.active ? 'active' : '' }># {this.state.channel.name}</li>
+			<li onClick={()=> this.props.selectChannel(this.state.channel.id)} className={ this.state.channel.active ? 'active' : '' }># {this.state.channel.channelName}</li>
 		)
 	}
 }
