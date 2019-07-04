@@ -53,7 +53,6 @@ class Content extends Component {
 				<NewMessage  createMessage={this.createMessage} />
 			</div>
 
-
 		)
 	}
 }

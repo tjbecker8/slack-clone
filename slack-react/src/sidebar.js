@@ -22,6 +22,7 @@ class Sidebar extends Component {
 
 	selectChannel = (id) => {
 		console.log(id);
+		this.props.getChannelId(id)
 		let channels = this.state.channels
 		channels.map((c)=> c.active = false) //add the active property to each element
 		// channels.map((c) => delete c.active) //delete a property
@@ -30,7 +31,7 @@ class Sidebar extends Component {
 		channel.active = true
 		this.setState({channels})
 		console.log(this.state.channels);
-		this.props.getChannelId(id)
+		// this.props.getChannelId(id)
 	}
 
 
