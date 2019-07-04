@@ -7,12 +7,14 @@ import axios from 'axios'
 class Content extends Component {
 	//data
 	state = {
-		messages: []
+		messages: [],
+		channel: this.props.channel
 	}
 	//functions
 
 	componentWillMount() {
-		axios.get(`http://localhost:4000/api/messages`).then((res)=> {
+		console.log('pppppppp',this.state.channel);
+		axios.get(`http://localhost:4000/api/messages?channel=${this.state.channel}`).then((res)=> {
 			console.log(res.data);
 			this.setState({
 				messages: res.data
@@ -21,6 +23,7 @@ class Content extends Component {
 			console.log('err', err);
 		})
 	}
+
 
 
 

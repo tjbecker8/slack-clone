@@ -5,14 +5,23 @@ import Sidebar from './sidebar'
 import Content from './Content'
 class App extends Component {
 	//data
+	state = {
+		 channel: ''
+	}
 	//functions
-	getChannelId (id) {}
+	channelCallback = (id) => {
+		this.setState({channel: id})
+		console.log('test',this.state);
+		}
+
+
+
 	//render
 	render() {
 		return (
 			<div id="wrap">
-				<Sidebar getChannelId={this.getChannelId} />
-				<Content getChannelId={this.getChannelId}/>
+				<Sidebar channelCallback={this.channelCallback}  />
+				<Content channel={this.state.channel}/>
 			</div>
 		)
 	}

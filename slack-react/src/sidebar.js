@@ -11,7 +11,7 @@ class Sidebar extends Component {
 	//functions
 	componentWillMount() {
 		axios.get(`http://localhost:4000/api/channel`).then((res)=> {
-			console.log(res.data);
+			// console.log(res.data);
 			this.setState({
 				channels: res.data
 			})
@@ -22,7 +22,7 @@ class Sidebar extends Component {
 
 	selectChannel = (id) => {
 		console.log(id);
-		this.props.getChannelId(id)
+
 		let channels = this.state.channels
 		channels.map((c)=> c.active = false) //add the active property to each element
 		// channels.map((c) => delete c.active) //delete a property
@@ -30,8 +30,9 @@ class Sidebar extends Component {
 		let channel = channels.find((c) => c._id === id)
 		channel.active = true
 		this.setState({channels})
-		console.log(this.state.channels);
-		// this.props.getChannelId(id)
+		// console.log(this.state.channels);
+
+		this.props.channelCallback(id)
 	}
 
 
