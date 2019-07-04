@@ -1,12 +1,24 @@
 const express = require('express')
-
-const app = express()
+const bodyParser = require('body-parser')
 
 require('dotenv').config()
+require('./db')
+const app = express()
 
-// app.use(express.static(path.join(__dirname, 'client')))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 
+
+app.get('/api/messages', require('./controllers/get_messages'))
+app.post('/api/messages', require('./controllers/post_message'))
+
+app.get('/api/channel', require('./controllers/get_channel'))
+app.post('/api/channel', require('./controllers/post_channel'))
+
+app.post('/api/signup', require('./controllers/signup'))
+app.post('/api/login', require('./controllers/login'))
+app.get('/api/users', require('./controllers/get_users'))
 
 
 
