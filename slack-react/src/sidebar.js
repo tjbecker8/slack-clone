@@ -10,7 +10,7 @@ class Sidebar extends Component {
 	}
 	//functions
 	componentWillMount() {
-		axios.get('http://localhost:4000/api/channel').then((res)=> {
+		axios.get(`http://localhost:4000/api/channel`).then((res)=> {
 			console.log(res.data);
 			this.setState({
 				channels: res.data
@@ -30,6 +30,7 @@ class Sidebar extends Component {
 		channel.active = true
 		this.setState({channels})
 		console.log(this.state.channels);
+		this.props.getChannelId(id)
 	}
 
 
@@ -43,7 +44,7 @@ class Sidebar extends Component {
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-							return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} iNeedAlcohol={this.iNeedAlcohol} />
+							return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
 						})
 					}
 				</ul>

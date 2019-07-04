@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './content.css';
 import Message from './Message'
 import NewMessage from './NewMessage'
+
 import axios from 'axios'
 class Content extends Component {
 	//data
@@ -9,8 +10,9 @@ class Content extends Component {
 		messages: []
 	}
 	//functions
+
 	componentWillMount() {
-		axios.get('http://localhost:4000/api/messages').then((res)=> {
+		axios.get(`http://localhost:4000/api/messages`).then((res)=> {
 			console.log(res.data);
 			this.setState({
 				messages: res.data
@@ -19,6 +21,7 @@ class Content extends Component {
 			console.log('err', err);
 		})
 	}
+
 
 
 	createMessage = (e, text) => {

@@ -6,12 +6,13 @@ import Content from './Content'
 class App extends Component {
 	//data
 	//functions
+	getChannelId (id) {}
 	//render
 	render() {
 		return (
 			<div id="wrap">
-				<Sidebar />
-				<Content />
+				<Sidebar getChannelId={this.getChannelId} />
+				<Content getChannelId={this.getChannelId}/>
 			</div>
 		)
 	}
