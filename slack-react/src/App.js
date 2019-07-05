@@ -3,26 +3,31 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Sidebar from './sidebar'
 import Content from './Content'
+import Signup from './signup'
 class App extends Component {
 	//data
 	state = {
-		 channel: ''
+		channel: ''
 	}
 	//functions
-	channelCallback = (id) => {
-		this.setState({channel: id})
-		console.log('test',this.state);
-		}
+	getMessages = (id) => {
+		console.log('id', id);
+		console.log('state', this.state);
+		this.setState({
+			channel: id
+		}, () => {
+			console.log('<<<<<<', this.state)
+		})
+
+	}
 
 
 
 	//render
 	render() {
 		return (
-			<div id="wrap">
-				<Sidebar channelCallback={this.channelCallback}  />
-				<Content channel={this.state.channel}/>
-			</div>
+			<Signup />
+	
 		)
 	}
 }

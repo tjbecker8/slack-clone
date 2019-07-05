@@ -6,8 +6,12 @@ html, body {
 }
 
 #wrap {
-	background: blue;
+
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 200px auto;
+}
+
+.Signup {
+	margin-top: 100px;
 }

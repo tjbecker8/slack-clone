@@ -21,7 +21,7 @@ class Sidebar extends Component {
 	}
 
 	selectChannel = (id) => {
-		console.log(id);
+		// console.log(id);
 
 		let channels = this.state.channels
 		channels.map((c)=> c.active = false) //add the active property to each element
@@ -32,7 +32,7 @@ class Sidebar extends Component {
 		this.setState({channels})
 		// console.log(this.state.channels);
 
-		this.props.channelCallback(id)
+		this.props.getMessages(id)
 	}
 
 

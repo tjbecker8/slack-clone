@@ -8,13 +8,13 @@ class Content extends Component {
 	//data
 	state = {
 		messages: [],
-		channel: this.props.channel
+		channel: ''
 	}
 	//functions
 
 	componentWillMount() {
-		console.log('pppppppp',this.state.channel);
-		axios.get(`http://localhost:4000/api/messages?channel=${this.state.channel}`).then((res)=> {
+
+		axios.get('http://localhost:4000/api/messages').then((res)=> {
 			console.log(res.data);
 			this.setState({
 				messages: res.data
@@ -24,7 +24,17 @@ class Content extends Component {
 		})
 	}
 
-
+componentWillReceiveProps(props) {
+	console.log('pr', props);
+	axios.get(`http://localhost:4000/api/messages?channel=${props.channel}`).then((res)=> {
+		console.log('res', res.data);
+		this.setState({
+			messages: res.data
+		})
+	}).catch((err)=> {
+		console.log('err', err);
+	})
+}
 
 
 	createMessage = (e, text) => {
