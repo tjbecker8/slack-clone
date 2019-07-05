@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Signup from './signup'
-import	App from './App'
+import App from './App'
 
 
 class Routes extends Component {
@@ -14,7 +14,7 @@ state = {}
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route patth="/app" component={App} />
+					<Route path="/app" component={App} />
 					<Route path="/" component={Signup} />
 				</Switch>
 			</BrowserRouter>
