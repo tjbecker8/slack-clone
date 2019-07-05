@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './sidebar.css';
+import './App.css';
 import axios from 'axios'
 
 class Login extends Component {
@@ -7,6 +7,7 @@ class Login extends Component {
 	state = {
 		email: '',
 		password: '',
+		error: ''
 	}
 
 	//functions
@@ -23,7 +24,17 @@ login =(e) => {
 	e.preventDefault()
 	axios.post('http://localhost:4000/api/login', this.state).then((res) => {
 		console.log('res',res)
-		localStorage.setItem('token', res.data.token)
+		if (!res.data.token) {
+			this.setState({
+				error: res.data
+			})
+		} else {
+			this.setState({
+				error: ''
+			})
+			localStorage.setItem('token', res.data.token)
+		}
+
 		// let x = localStorage.getItem('token')
 	}).catch((err)=> {
 		console.log('err', err)
@@ -45,6 +56,7 @@ login =(e) => {
 								<div className="form-group">
 									<input type="password" className="form-control" placeholder="password" value={this.state.password} onChange={(e) => this.changePassword(e)}/>
 								</div>
+								<div className="error">{this.state.error}</div>
 								<button type="submit" className="btn btn-primary">Login</button>
 							</form>
 
