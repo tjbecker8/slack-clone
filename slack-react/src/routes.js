@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Signup from './signup'
 import App from './App'
+import Login from './login'
 
 
 class Routes extends Component {
@@ -15,6 +16,7 @@ state = {}
 			<BrowserRouter>
 				<Switch>
 					<Route path="/app" component={App} />
+					<Route path="/login" component={Login} />
 					<Route path="/" component={Signup} />
 				</Switch>
 			</BrowserRouter>
