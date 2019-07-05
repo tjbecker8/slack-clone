@@ -23,7 +23,7 @@ changePassword = (e) => {
 login =(e) => {
 	e.preventDefault()
 	axios.post('http://localhost:4000/api/login', this.state).then((res) => {
-		console.log('res',res)
+		
 		if (!res.data.token) {
 			this.setState({
 				error: res.data
@@ -33,6 +33,7 @@ login =(e) => {
 				error: ''
 			})
 			localStorage.setItem('token', res.data.token)
+			this.props.auth()
 		}
 
 		// let x = localStorage.getItem('token')

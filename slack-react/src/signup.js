@@ -28,7 +28,7 @@ signup =(e) => {
 	axios.post('http://localhost:4000/api/signup', this.state).then((res) => {
 		console.log('res',res)
 		localStorage.setItem('token', res.data.token)
-		// let x = localStorage.getItem('token')
+		this.props.auth()
 	}).catch((err)=> {
 		console.log('err', err)
 	})
