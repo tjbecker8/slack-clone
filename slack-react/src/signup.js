@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './sidebar.css';
+import axios from 'axios'
 
 class Signup extends Component {
 	//data
@@ -22,6 +23,17 @@ changePassword = (e) => {
 	this.setState({password: e.target.value})
 }
 
+signup =(e) => {
+	e.preventDefault()
+	axios.post('http://localhost:4000/api/signup', this.state).then((res) => {
+		console.log('res',res)
+		localStorage.setItem('token', res.data.token)
+		let x = localStorage.getItem('token')
+	}).catch((err)=> {
+		console.log('err', err)
+	})
+}
+
 
 	//render
 	render() {
@@ -30,7 +42,7 @@ changePassword = (e) => {
 				<div className="col-sm-4 offset-4">
 					<div className="card signup">
 						<div className="card-body">
-							<form>
+							<form onSubmit={(e)=> this.signup(e)}>
 								<div className="form-group">
 									<input type="text" className="form-control" placeholder="name" value={this.state.name} onChange={(e)=> this.changeName(e)}/>
 								</div>
@@ -40,7 +52,7 @@ changePassword = (e) => {
 								<div className="form-group">
 									<input type="password" className="form-control" placeholder="password" value={this.state.password} onChange={(e) => this.changePassword(e)}/>
 								</div>
-								<button className="btn btn-primary">Signup</button>
+								<button type="submit" className="btn btn-primary">Signup</button>
 							</form>
 
 						</div>
