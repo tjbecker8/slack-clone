@@ -4,6 +4,8 @@ import './App.css';
 import Sidebar from './sidebar'
 import Content from './Content'
 import Signup from './signup'
+
+
 class App extends Component {
 	//data
 	state = {
@@ -26,9 +28,7 @@ class App extends Component {
 	//render
 	render() {
 		return (
-			
 			<div id="wrap">
-
 				<Sidebar  getMessages={this.getMessages} />
 			<Content channel={this.state.channel} />
 			</div>

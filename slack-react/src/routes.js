@@ -9,15 +9,13 @@ class Routes extends Component {
 state = {}
 	//functions
 
-
-
 	//render
 	render() {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route path="/signup" component={Signup} /> //will render signup compnent to the ui
 					<Route patth="/app" component={App} />
+					<Route path="/" component={Signup} />
 				</Switch>
 			</BrowserRouter>
 		)
