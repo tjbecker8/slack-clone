@@ -26,6 +26,9 @@ class Content extends Component {
 
 componentWillReceiveProps(props) {
 	console.log('pr', props);
+	this.setState({
+		channel: props.channel
+	})
 	axios.get(`http://localhost:4000/api/messages?channel=${props.channel}`).then((res)=> {
 		console.log('res', res.data);
 		this.setState({
@@ -37,20 +40,24 @@ componentWillReceiveProps(props) {
 }
 
 
+
 	createMessage = (e, text) => {
 		e.preventDefault()
-		let message = {
-			id: 7,
-			author: 'Tom',
-			body: text,
-			date: 'date'
-		}
-		console.log(message)
-		let messages = this.state.messages
-		messages.push(message)
-		this.setState({messages})
+			let message = {
+				body: text,
+				channel: this.state.channel,
+				token: localStorage.getItem('token')
+			}
+			console.log('iiiii',message)
+			axios.post('http://localhost:4000/api/messages', message).then((res)=> {
+				console.log('res>>>>', res.data);
+			})
 
-	}
+		let messages = this.state.messages
+
+}
+
+
 	//render
 	render() {
 		return (
