@@ -24,6 +24,9 @@ class Content extends Component {
 		})
 	}
 
+
+
+
 componentWillReceiveProps(props) {
 	console.log('pr', props);
 	this.setState({
@@ -51,10 +54,13 @@ componentWillReceiveProps(props) {
 			console.log('iiiii',message)
 			axios.post('http://localhost:4000/api/messages', message).then((res)=> {
 				console.log('res>>>>', res.data);
+				let messages = this.state.messages
+				console.log('<><><>', messages);
+				messages.push(res.data)
+				this.setState({messages})
+			}).catch((err)=> {
+				console.log('err', err);
 			})
-
-		let messages = this.state.messages
-
 }
 
 
