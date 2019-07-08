@@ -15,7 +15,7 @@ class Content extends Component {
 	componentWillMount() {
 
 		axios.get('http://localhost:4000/api/messages').then((res)=> {
-			console.log(res.data);
+			// console.log(res.data);
 			this.setState({
 				messages: res.data
 			})
@@ -28,12 +28,12 @@ class Content extends Component {
 
 
 componentWillReceiveProps(props) {
-	console.log('pr', props);
+
 	this.setState({
 		channel: props.channel
 	})
 	axios.get(`http://localhost:4000/api/messages?channel=${props.channel}`).then((res)=> {
-		console.log('res', res.data);
+		
 		this.setState({
 			messages: res.data
 		})

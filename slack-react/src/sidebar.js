@@ -11,17 +11,20 @@ class Sidebar extends Component {
 	//functions
 	componentWillMount() {
 		axios.get(`http://localhost:4000/api/channel`).then((res)=> {
-			// console.log(res.data);
 			this.setState({
 				channels: res.data
 			})
+			let channels = this.state.channels
+		channels.map((c) => c.active =false)
+		let channel = channels[0]
+		channel.active = true
+		this.setState({channels})
 		}).catch((err)=> {
 			console.log('err', err);
 		})
 	}
 
 	selectChannel = (id) => {
-		// console.log(id);
 
 		let channels = this.state.channels
 		channels.map((c)=> c.active = false) //add the active property to each element

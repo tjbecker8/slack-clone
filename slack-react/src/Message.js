@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './sidebar.css';
+import moment from 'moment'
 
 class Message extends Component {
 	//data
@@ -7,6 +8,11 @@ class Message extends Component {
 		message: this.props.message
 	}
 	//functions
+	componentWillMount() {
+		let message = this.state.message
+		message.date = moment(message.date).format('D MMM YYYY - h:mma')
+		this.setState({message})
+	}
 	//render
 	render() {
 		return (
