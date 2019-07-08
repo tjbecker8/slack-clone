@@ -49,13 +49,13 @@ componentWillReceiveProps(props) {
 			let message = {
 				body: text,
 				channel: this.state.channel,
-				token: localStorage.getItem('token')
 			}
-			console.log('iiiii',message)
-			axios.post('http://localhost:4000/api/messages', message).then((res)=> {
-				console.log('res>>>>', res.data);
+
+			axios.post('http://localhost:4000/api/messages', message, {headers: {
+				Authorization: `Bearer ${localStorage.getItem('token')}`
+			}}
+		).then((res)=> {
 				let messages = this.state.messages
-				console.log('<><><>', messages);
 				messages.push(res.data)
 				this.setState({messages})
 			}).catch((err)=> {
