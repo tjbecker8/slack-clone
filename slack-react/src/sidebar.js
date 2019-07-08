@@ -9,23 +9,19 @@ class Sidebar extends Component {
 		channels: []
 	}
 	//functions
-	componentWillMount() {
+	componentDidMount() {
 		axios.get(`http://localhost:4000/api/channel`).then((res)=> {
-			this.setState({
-				channels: res.data
-			})
-			let channels = this.state.channels
-		// making first channel active by default
-		let channel = channels[0]
-		channel.active = true
-		this.setState({channels})
+				res.data[0].active = true
+				this.setState({
+					channels: res.data
+				})
+		this.selectChannel(res.data[0]._id)
 		}).catch((err)=> {
 			console.log('err', err);
 		})
 	}
 
 	selectChannel = (id) => {
-
 		let channels = this.state.channels
 		channels.map((c)=> c.active = false) //add the active property to each element
 		// channels.map((c) => delete c.active) //delete a property
