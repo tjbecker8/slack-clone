@@ -54,7 +54,6 @@ signup =(e) => {
 								</div>
 								<button type="submit" className="btn btn-primary">Signup</button>
 							</form>
-
 						</div>
 					</div>
 				</div>

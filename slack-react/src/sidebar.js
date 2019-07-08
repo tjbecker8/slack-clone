@@ -15,7 +15,7 @@ class Sidebar extends Component {
 				channels: res.data
 			})
 			let channels = this.state.channels
-		channels.map((c) => c.active =false)
+		// making first channel active by default
 		let channel = channels[0]
 		channel.active = true
 		this.setState({channels})
